@@ -32,6 +32,11 @@ export function TrafficLight({
   const itemStyles = getStyles({ theme, minLightWidth, layoutMode });
   const bgColor = theme.isDark ? theme.colors.background.secondary : '#C5C5C8';
   const emptyColor = theme.isDark ? theme.colors.background.primary : '#AAAAAF';
+  if(light.numericValue === 999) {
+    light.colors[0].active = false;
+    light.colors[1].active = false;
+    light.colors[2].active = false;
+  }
   return (
     <div key={light.title} className={itemStyles}>
       {light.hasLinks && light.getLinks !== undefined ? (
