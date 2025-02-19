@@ -14,6 +14,7 @@ export function TrafficLight({
   showLegend,
   showValue,
   showTrend,
+  lightOffValue,
   horizontal,
   minLightWidth,
   layoutMode,
@@ -22,6 +23,7 @@ export function TrafficLight({
   style: TrafficLightStyle;
   showLegend: boolean;
   showValue: boolean;
+  lightOffValue: number;
   showTrend: boolean;
   horizontal: boolean;
   minLightWidth: number;
@@ -32,7 +34,7 @@ export function TrafficLight({
   const itemStyles = getStyles({ theme, minLightWidth, layoutMode });
   const bgColor = theme.isDark ? theme.colors.background.secondary : '#C5C5C8';
   const emptyColor = theme.isDark ? theme.colors.background.primary : '#AAAAAF';
-  if(light.numericValue === 999) {
+  if(light.numericValue === lightOffValue) {
     light.colors[0].active = false;
     light.colors[1].active = false;
     light.colors[2].active = false;

@@ -27,7 +27,7 @@ export function TrafficLightPanel({
   fieldConfig,
   timeZone,
 }: TrafficLightPanelProps) {
-  const { minLightWidth, sortLights, layoutMode, style, showLegend, showTrend, showValue, horizontal, reverseColors } =
+  const { minLightWidth, sortLights, lightOffValue, layoutMode, style, showLegend, showTrend, showValue, horizontal, reverseColors } =
     options;
 
   const { values, status, invalidThresholds } = useLightsData({
@@ -71,6 +71,7 @@ export function TrafficLightPanel({
                 key={light.title}
                 light={light}
                 style={style}
+                lightOffValue={lightOffValue}
                 showLegend={showLegend}
                 showTrend={showTrend}
                 showValue={showValue}
@@ -100,6 +101,7 @@ export function TrafficLightPanel({
             light={light}
             style={style}
             showLegend={showLegend}
+            lightOffValue={lightOffValue}
             showTrend={showTrend}
             showValue={showValue}
             horizontal={horizontal}

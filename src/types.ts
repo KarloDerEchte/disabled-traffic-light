@@ -26,6 +26,7 @@ export interface TrafficLightOptions {
   showValue: boolean;
   showLegend: boolean;
   showTrend: boolean;
+  lightOffValue: number;
   sortLights: SortOption;
   horizontal: boolean;
   singleRow?: boolean;

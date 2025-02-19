@@ -14,6 +14,12 @@ export const plugin = new PanelPlugin<TrafficLightOptions>(TrafficLightPanel)
         description: 'Set the minimum traffic light width',
         defaultValue: 100,
       })
+      .addNumberInput({
+        path: 'lightOffValue',
+        name: 'Light Off Value',
+        description: 'Value that should make the Traffic Light off',
+        defaultValue: 0
+      })
       .addRadio({
         path: 'layoutMode',
         name: 'Layout',
